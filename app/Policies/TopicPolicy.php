@@ -11,9 +11,4 @@ class TopicPolicy extends Policy
     {
         return $user->id === $topic->user_id;
     }
-
-    public function destroy(User $user, Topic $topic)
-    {
-        return true;
-    }
 }
