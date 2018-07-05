@@ -56,4 +56,9 @@ class User extends Authenticatable
         $this->save();
         $this->unreadNotifications->markAsRead();
     }
+
+    public function isAuthorOf(Model $model)
+    {
+        return $this->id === $model->user_id;
+    }
 }
