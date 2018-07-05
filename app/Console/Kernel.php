@@ -24,7 +24,9 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        $schedule->command('larabbs:calculate-active-user')->hourly();
+        $schedule->command('blog:calculate-active-user')->hourly();
+        // 每日零时执行一次
+        $schedule->command('blog:sync-user-actived-at')->dailyAt('00:00');
     }
 
     /**
